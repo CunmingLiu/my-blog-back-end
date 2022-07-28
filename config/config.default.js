@@ -5,7 +5,7 @@
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
-module.exports = appInfo => {
+module.exports = (appInfo) => {
   /**
    * built-in config
    * @type {Egg.EggAppConfig}
@@ -18,7 +18,6 @@ module.exports = appInfo => {
         hostname: '192.168.10.7',
       },
     },
-
   });
 
   // use for cookie sign key, should change to your own and keep security
@@ -33,9 +32,7 @@ module.exports = appInfo => {
   };
 
   config.mongoose = {
-    url:
-      process.env.EGG_MONGODB_URL ||
-      'mongodb://localhost:27017/admin',
+    url: process.env.EGG_MONGODB_URL || 'mongodb://localhost:27017/admin',
     options: {},
   };
 
@@ -43,7 +40,7 @@ module.exports = appInfo => {
     csrf: {
       enable: false,
     },
-    domainWhiteList: [ '*' ], // 允许访问接口的白名单
+    domainWhiteList: ['*'], // 允许访问接口的白名单
   };
   config.cors = {
     origin: '*', // 允许跨域请求的地址
